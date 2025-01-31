@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import axios, { all } from "axios";
-import { VerticalGraph } from "./VerticalGraph";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { VerticalGraph } from './VerticalGraph';
 
 // import { holdings } from "../data/data";
 
@@ -8,22 +8,21 @@ const Holdings = () => {
   const [allHoldings, setAllHoldings] = useState([]);
 
   useEffect(() => {
-    axios.get("http://localhost:3002/allHoldings").then((res) => {
-      // console.log(res.data);
+    axios.get('http://localhost:80/allHoldings').then(res => {
       setAllHoldings(res.data);
     });
   }, []);
 
   // const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
-  const labels = allHoldings.map((subArray) => subArray["name"]);
+  const labels = allHoldings.map(subArray => subArray['name']);
 
   const data = {
     labels,
     datasets: [
       {
-        label: "Stock Price",
-        data: allHoldings.map((stock) => stock.price),
-        backgroundColor: "rgba(255, 99, 132, 0.5)",
+        label: 'Stock Price',
+        data: allHoldings.map(stock => stock.price),
+        backgroundColor: 'rgba(255, 99, 132, 0.5)',
       },
     ],
   };
@@ -46,9 +45,9 @@ const Holdings = () => {
 
   return (
     <>
-      <h3 className="title">Holdings ({allHoldings.length})</h3>
+      <h3 className='title'>Holdings ({allHoldings.length})</h3>
 
-      <div className="order-table">
+      <div className='order-table'>
         <table>
           <tr>
             <th>Instrument</th>
@@ -64,8 +63,8 @@ const Holdings = () => {
           {allHoldings.map((stock, index) => {
             const curValue = stock.price * stock.qty;
             const isProfit = curValue - stock.avg * stock.qty >= 0.0;
-            const profClass = isProfit ? "profit" : "loss";
-            const dayClass = stock.isLoss ? "loss" : "profit";
+            const profClass = isProfit ? 'profit' : 'loss';
+            const dayClass = stock.isLoss ? 'loss' : 'profit';
 
             return (
               <tr key={index}>
@@ -85,20 +84,20 @@ const Holdings = () => {
         </table>
       </div>
 
-      <div className="row">
-        <div className="col">
+      <div className='row'>
+        <div className='col'>
           <h5>
-            29,875.<span>55</span>{" "}
+            29,875.<span>55</span>
           </h5>
           <p>Total investment</p>
         </div>
-        <div className="col">
+        <div className='col'>
           <h5>
-            31,428.<span>95</span>{" "}
+            31,428.<span>95</span>
           </h5>
           <p>Current value</p>
         </div>
-        <div className="col">
+        <div className='col'>
           <h5>1,553.40 (+5.20%)</h5>
           <p>P&L</p>
         </div>
