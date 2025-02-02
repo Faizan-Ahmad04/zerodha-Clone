@@ -15,7 +15,7 @@ export default function Education() {
           </p>
           <a href='' className='mb-4' style={{ textDecoration: 'none' }}>
             Varsity
-            <i class='fa fa-long-arrow-right' aria-hidden='true'></i>
+            <i className='fa fa-long-arrow-right' aria-hidden='true'></i>
           </a>
           <p className='mt-4'>
             TradingQ&A, the most active trading and investment community in
@@ -23,7 +23,7 @@ export default function Education() {
           </p>
           <a href='' style={{ textDecoration: 'none' }}>
             TradingQ&A
-            <i class='fa fa-long-arrow-right' aria-hidden='true'></i>
+            <i className='fa fa-long-arrow-right' aria-hidden='true'></i>
           </a>
         </div>
       </div>

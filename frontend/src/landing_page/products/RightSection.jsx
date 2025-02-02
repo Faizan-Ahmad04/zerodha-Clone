@@ -15,7 +15,7 @@ export default function RightSection({
           <div>
             <a href={learnMore} style={{ textDecoration: 'none' }}>
               Learn More
-              <i class='fa fa-long-arrow-right p-2'></i>
+              <i className='fa fa-long-arrow-right p-2'></i>
             </a>
           </div>
         </div>

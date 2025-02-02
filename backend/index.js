@@ -5,12 +5,17 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const { HoldingsModel } = require('./model/HoldingsModel');
 const { PositionsModel } = require('./model/PositionsModel');
+const cookieParser = require('cookie-parser');
+const userRoute = require('./Routes/user');
 
 const app = express();
 
 //MIDDLEWARES
 app.use(cors());
 app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(cookieParser());
 
 const PORT = process.env.PORT || 80;
 const uri = process.env.MONGO_URL;
@@ -122,5 +127,7 @@ app.post('/newOrder', async (req, res) => {
 
   res.send('Order saved!');
 });
+
+app.use('/', userRoute);
 
 app.listen(PORT, () => console.log(`server is listening on ${PORT}`));

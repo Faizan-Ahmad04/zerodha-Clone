@@ -21,14 +21,14 @@ export default function LeftSection({
           <div>
             <a href={tryDemo} style={{ textDecoration: 'none' }}>
               Try Demo
-              <i class='fa fa-long-arrow-right p-2' aria-hidden='true'></i>
+              <i className='fa fa-long-arrow-right p-2' aria-hidden='true'></i>
             </a>
             <a
               href={learnMore}
               style={{ marginLeft: '50px', textDecoration: 'none' }}
             >
               Learn More
-              <i class='fa fa-long-arrow-right p-2' aria-hidden='true'></i>
+              <i className='fa fa-long-arrow-right p-2' aria-hidden='true'></i>
             </a>
           </div>
           <div className='mt-3'>
